@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Guess what letter I'm thinking of</title>
+</head>
+
+<body>
+
+  <div>
+    <p id="directions-text">Pick a letter!</p>
+    <p id="userchoice-text"></p>
+    <p id="computerchoice-text"></p>
+    <p id="wins-text"></p>
+    <p id="guesses-left"></p>
+   <div id="target"></div>
+  </div>
+
+  <script type="text/javascript">
+   
+        
+   
+    var alphabet = "abcdefghijklmnopqrstuvwxyz";
+    var wins = 0;
+    var losses = 0;
+    var guessLeft = 11;
+    var directionsText = document.getElementById("directions-text");
+    var userChoiceText = document.getElementById("userchoice-text");
+    var computerChoiceText = document.getElementById("computerchoice-text");
+    var winsText = document.getElementById("wins-text");
+    var lossesText = document.getElementById("losses-text")
+    var guessesText = document.getElementById("guesses-left");
+    var allGuesses = document.getElementById("guesses");
+    var allGuessesarr = []
+    var computerChoices = alphabet[Math.floor(Math.random() * alphabet.length)];
+    
+
+    
+    document.onkeyup = function(event) {
+    
+      var userGuess = event.key;
+
+    document.onkeyup = function(event) {
+      var userGuess = event.key;
+        allGuessesarr.push(userGuess)
+        target.innerHTML = allGuessesarr
+      
+      }
+
+      // if ((userGuess === "a") || (userGuess === "b") || (userGuess === "c" || (userGuess === "d")  || (userGuess === "e")  || (userGuess === "f")  || (userGuess === "g")  || (userGuess === "h")  || (userGuess === "i")  || (userGuess === "j")  || (userGuess === "k")  || (userGuess === "l")  || (userGuess === "m")  || (userGuess === "n")  || (userGuess === "o")  || (userGuess === "p")  || (userGuess === "q")  || (userGuess === "r") || (userGuess === "s")  || (userGuess === "t")  || (userGuess === "u")  || (userGuess === "v") || (userGuess === "w")  || (userGuess === "x")  || (userGuess === "y")  || (userGuess === "z")   ))
+      // {
+
+      if (userGuess === computerChoices) {
+        wins++;
+        }
+        else {
+          guessesText--;
+        }
+
+        if (length.allGuessesarr > 10) {
+        length.allGuessesarr = 0;
+      }
+       
+
+      if (guessLeft === 0) {
+        guessLeft = 10;
+      }
+   
+   
+        winsText.textContent = "wins: " + wins;
+        guessesText.textContent = "Guesses left " + guessesText; 
+        allGuessesarr.textContent = "You guessed " + allGuessesarr;
+
+
+
+    };
+    
+  </script>
+
+</body>
+
+</html>
